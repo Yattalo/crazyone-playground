@@ -1,0 +1,580 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Exo+2:wght@300;400;600;700&family=Nunito:wght@400;600;700;800&family=Orbitron:wght@400;700&family=Oswald:wght@400;600;700&family=Playfair+Display:wght@400;600;700&family=Architects+Daughter&family=Bebas+Neue&family=Outfit:wght@400;500;600&family=Crimson+Pro:wght@400;600&family=Lora:wght@400;600&family=Libre+Baskerville:wght@400;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+  }
+
+  /* ========================================
+     BRUTALIST THEME
+     ======================================== */
+  [data-theme="brutalist"] {
+    --background: 0 0% 95%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 0 0% 85%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 90%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 5%;
+    --input: 0 0% 5%;
+    --ring: 0 0% 5%;
+    --radius: 0px;
+    font-family: "Space Mono", monospace;
+  }
+
+  /* ========================================
+     VAPORWAVE THEME
+     ======================================== */
+  [data-theme="vaporwave"] {
+    --background: 280 60% 8%;
+    --foreground: 180 100% 95%;
+    --card: 280 50% 12%;
+    --card-foreground: 180 100% 95%;
+    --popover: 280 50% 12%;
+    --popover-foreground: 180 100% 95%;
+    --primary: 320 100% 70%;
+    --primary-foreground: 280 60% 8%;
+    --secondary: 180 100% 50%;
+    --secondary-foreground: 280 60% 8%;
+    --muted: 280 40% 20%;
+    --muted-foreground: 180 50% 70%;
+    --accent: 320 100% 70%;
+    --accent-foreground: 280 60% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 320 100% 70%;
+    --input: 280 50% 15%;
+    --ring: 320 100% 70%;
+    --radius: 0px;
+    font-family: "Noto Sans JP", sans-serif;
+  }
+
+  /* ========================================
+     CYBERDECK THEME
+     ======================================== */
+  [data-theme="cyberdeck"] {
+    --background: 120 10% 5%;
+    --foreground: 120 100% 60%;
+    --card: 120 10% 8%;
+    --card-foreground: 120 100% 60%;
+    --popover: 120 10% 8%;
+    --popover-foreground: 120 100% 60%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 120 10% 5%;
+    --secondary: 120 50% 20%;
+    --secondary-foreground: 120 100% 60%;
+    --muted: 120 10% 15%;
+    --muted-foreground: 120 50% 40%;
+    --accent: 120 100% 50%;
+    --accent-foreground: 120 10% 5%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 120 100% 30%;
+    --input: 120 10% 10%;
+    --ring: 120 100% 50%;
+    --radius: 0px;
+    font-family: "JetBrains Mono", monospace;
+  }
+
+  /* ========================================
+     HOLOGRAM THEME
+     ======================================== */
+  [data-theme="hologram"] {
+    --background: 260 20% 5%;
+    --foreground: 0 0% 95%;
+    --card: 260 30% 10%;
+    --card-foreground: 0 0% 95%;
+    --popover: 260 30% 10%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 280 100% 70%;
+    --primary-foreground: 260 20% 5%;
+    --secondary: 200 100% 60%;
+    --secondary-foreground: 260 20% 5%;
+    --muted: 260 20% 20%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 320 100% 65%;
+    --accent-foreground: 260 20% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 280 50% 40%;
+    --input: 260 30% 15%;
+    --ring: 280 100% 70%;
+    --radius: 16px;
+    font-family: "Exo 2", sans-serif;
+  }
+
+  /* ========================================
+     BUBBLEGUM THEME
+     ======================================== */
+  [data-theme="bubblegum"] {
+    --background: 330 100% 98%;
+    --foreground: 330 50% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 330 50% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 330 50% 20%;
+    --primary: 330 100% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 180 80% 60%;
+    --secondary-foreground: 180 80% 10%;
+    --muted: 330 50% 95%;
+    --muted-foreground: 330 30% 50%;
+    --accent: 45 100% 60%;
+    --accent-foreground: 45 100% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 330 50% 85%;
+    --input: 330 50% 90%;
+    --ring: 330 100% 65%;
+    --radius: 24px;
+    font-family: "Nunito", sans-serif;
+  }
+
+  /* ========================================
+     OBSIDIAN THEME
+     ======================================== */
+  [data-theme="obsidian"] {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 348 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 348 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 348 83% 58%;
+    --radius: 0.125rem;
+    font-family: 'Inter', 'SF Pro Display', sans-serif;
+  }
+
+  /* ========================================
+     CAMPFIRE THEME
+     ======================================== */
+  [data-theme="campfire"] {
+    --background: 240 35% 12%;
+    --foreground: 35 60% 92%;
+    --card: 240 30% 16%;
+    --card-foreground: 35 60% 92%;
+    --popover: 240 30% 16%;
+    --popover-foreground: 35 60% 92%;
+    --primary: 20 90% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 35 70% 75%;
+    --secondary-foreground: 240 30% 12%;
+    --muted: 240 20% 22%;
+    --muted-foreground: 35 30% 60%;
+    --accent: 35 70% 75%;
+    --accent-foreground: 240 30% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 40% 30%;
+    --input: 240 25% 18%;
+    --ring: 20 90% 52%;
+    --radius: 0.5rem;
+    font-family: 'Crimson Pro', 'Georgia', serif;
+  }
+
+  /* ========================================
+     BAUHAUS THEME
+     ======================================== */
+  [data-theme="bauhaus"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 5%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
+    --primary: 0 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 60 100% 50%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 220 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 5%;
+    --input: 0 0% 95%;
+    --ring: 0 100% 50%;
+    --radius: 0rem;
+    font-family: 'Futura', 'Century Gothic', sans-serif;
+  }
+
+  /* ========================================
+     ARCTIC THEME
+     ======================================== */
+  [data-theme="arctic"] {
+    --background: 210 30% 98%;
+    --foreground: 220 40% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 40% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 40% 20%;
+    --primary: 195 95% 60%;
+    --primary-foreground: 220 40% 10%;
+    --secondary: 280 90% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 20% 50%;
+    --accent: 280 90% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 25% 88%;
+    --input: 210 20% 96%;
+    --ring: 195 95% 60%;
+    --radius: 0.25rem;
+    font-family: 'Exo 2', 'Rajdhani', sans-serif;
+  }
+
+  /* ========================================
+     TERRACOTTA THEME
+     ======================================== */
+  [data-theme="terracotta"] {
+    --background: 35 35% 95%;
+    --foreground: 20 40% 20%;
+    --card: 35 30% 98%;
+    --card-foreground: 20 40% 20%;
+    --popover: 35 30% 98%;
+    --popover-foreground: 20 40% 20%;
+    --primary: 15 60% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 100 30% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 35 25% 90%;
+    --muted-foreground: 20 20% 45%;
+    --accent: 100 30% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 20 25% 80%;
+    --input: 35 20% 92%;
+    --ring: 15 60% 55%;
+    --radius: 0.5rem;
+    font-family: 'Lora', 'Georgia', serif;
+  }
+
+  /* ========================================
+     GELATO THEME
+     ======================================== */
+  [data-theme="gelato"] {
+    --background: 40 60% 96%;
+    --foreground: 20 30% 25%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 30% 25%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 30% 25%;
+    --primary: 0 45% 72%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 45% 75%;
+    --secondary-foreground: 150 40% 20%;
+    --muted: 40 30% 92%;
+    --muted-foreground: 20 15% 50%;
+    --accent: 150 45% 75%;
+    --accent-foreground: 150 40% 20%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 40 30% 85%;
+    --input: 40 25% 94%;
+    --ring: 0 45% 72%;
+    --radius: 0.75rem;
+    font-family: 'Playfair Display', 'Didot', serif;
+  }
+
+  /* ========================================
+     SYNTHWAVE THEME
+     ======================================== */
+  [data-theme="synthwave"] {
+    --background: 270 60% 8%;
+    --foreground: 180 100% 95%;
+    --card: 270 50% 12%;
+    --card-foreground: 180 100% 95%;
+    --popover: 270 50% 12%;
+    --popover-foreground: 180 100% 95%;
+    --primary: 340 100% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 100% 50%;
+    --secondary-foreground: 270 50% 10%;
+    --muted: 270 30% 18%;
+    --muted-foreground: 270 20% 55%;
+    --accent: 190 100% 50%;
+    --accent-foreground: 270 50% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 340 50% 35%;
+    --input: 270 35% 15%;
+    --ring: 340 100% 58%;
+    --radius: 0rem;
+    font-family: 'Orbitron', 'Audiowide', sans-serif;
+  }
+
+  /* ========================================
+     DARKROOM THEME
+     ======================================== */
+  [data-theme="darkroom"] {
+    --background: 0 0% 11%;
+    --foreground: 45 40% 92%;
+    --card: 0 0% 14%;
+    --card-foreground: 45 40% 92%;
+    --popover: 0 0% 14%;
+    --popover-foreground: 45 40% 92%;
+    --primary: 0 100% 27%;
+    --primary-foreground: 45 40% 92%;
+    --secondary: 45 30% 88%;
+    --secondary-foreground: 0 0% 11%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 45 15% 55%;
+    --accent: 45 30% 88%;
+    --accent-foreground: 0 0% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 30% 22%;
+    --input: 0 0% 16%;
+    --ring: 0 100% 27%;
+    --radius: 0rem;
+    font-family: 'Libre Baskerville', 'Palatino', serif;
+  }
+
+  /* ========================================
+     THUNDERSTORM THEME
+     ======================================== */
+  [data-theme="thunderstorm"] {
+    --background: 240 30% 12%;
+    --foreground: 210 15% 85%;
+    --card: 240 25% 16%;
+    --card-foreground: 210 15% 85%;
+    --popover: 240 25% 16%;
+    --popover-foreground: 210 15% 85%;
+    --primary: 55 95% 60%;
+    --primary-foreground: 240 30% 10%;
+    --secondary: 210 10% 60%;
+    --secondary-foreground: 240 30% 12%;
+    --muted: 240 20% 22%;
+    --muted-foreground: 210 10% 55%;
+    --accent: 210 10% 60%;
+    --accent-foreground: 240 30% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 15% 30%;
+    --input: 240 20% 18%;
+    --ring: 55 95% 60%;
+    --radius: 0.125rem;
+    font-family: 'Oswald', 'Bebas Neue', sans-serif;
+  }
+
+  /* ========================================
+     RETROFUTURE THEME
+     ======================================== */
+  [data-theme="retrofuture"] {
+    --background: 45 50% 94%;
+    --foreground: 210 50% 25%;
+    --card: 45 45% 97%;
+    --card-foreground: 210 50% 25%;
+    --popover: 45 45% 97%;
+    --popover-foreground: 210 50% 25%;
+    --primary: 210 55% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 95% 52%;
+    --secondary-foreground: 210 50% 15%;
+    --muted: 45 30% 88%;
+    --muted-foreground: 210 20% 45%;
+    --accent: 30 95% 52%;
+    --accent-foreground: 210 50% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 25% 75%;
+    --input: 45 35% 92%;
+    --ring: 210 55% 35%;
+    --radius: 0.5rem;
+    font-family: 'Futura', 'Avenir', sans-serif;
+  }
+
+  /* ========================================
+     GREENHOUSE THEME
+     ======================================== */
+  [data-theme="greenhouse"] {
+    --background: 150 30% 97%;
+    --foreground: 140 35% 20%;
+    --card: 150 20% 99%;
+    --card-foreground: 140 35% 20%;
+    --popover: 150 20% 99%;
+    --popover-foreground: 140 35% 20%;
+    --primary: 140 40% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 90% 60%;
+    --secondary-foreground: 45 60% 15%;
+    --muted: 150 20% 92%;
+    --muted-foreground: 140 15% 45%;
+    --accent: 45 90% 60%;
+    --accent-foreground: 45 60% 15%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 140 20% 85%;
+    --input: 150 15% 94%;
+    --ring: 140 40% 35%;
+    --radius: 1rem;
+    font-family: 'Source Sans Pro', 'Segoe UI', sans-serif;
+  }
+
+  /* ========================================
+     WIREFRAME THEME
+     ======================================== */
+  [data-theme="wireframe"] {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 20%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 72% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 72% 65%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 20%;
+    --radius: 0.25rem;
+    font-family: 'Architects Daughter', 'Comic Neue', cursive;
+  }
+
+  /* ========================================
+     NIGHTCLUB THEME
+     ======================================== */
+  [data-theme="nightclub"] {
+    --background: 0 0% 6%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 330 100% 54%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 0 0% 5%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 330 50% 30%;
+    --input: 0 0% 10%;
+    --ring: 330 100% 54%;
+    --radius: 0.25rem;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+  }
+
+  /* ========================================
+     BIOLUMINESCENT THEME
+     ======================================== */
+  [data-theme="bioluminescent"] {
+    --background: 195 80% 5%;
+    --foreground: 170 100% 85%;
+    --card: 195 70% 8%;
+    --card-foreground: 170 100% 85%;
+    --popover: 195 70% 8%;
+    --popover-foreground: 170 100% 85%;
+    --primary: 170 100% 60%;
+    --primary-foreground: 195 80% 5%;
+    --secondary: 280 80% 65%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 195 50% 15%;
+    --muted-foreground: 170 40% 50%;
+    --accent: 280 80% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 195 50% 20%;
+    --input: 195 60% 12%;
+    --ring: 170 100% 60%;
+    --radius: 1.5rem;
+    font-family: 'Outfit', 'Sora', sans-serif;
+  }
+
+  /* ========================================
+     BLACKLETTER THEME
+     ======================================== */
+  [data-theme="blackletter"] {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 350 72% 47%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 350 72% 47%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 350 40% 25%;
+    --input: 0 0% 10%;
+    --ring: 350 72% 47%;
+    --radius: 0rem;
+    font-family: 'UnifrakturMaguntia', 'Fraktur', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

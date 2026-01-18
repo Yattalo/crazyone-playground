@@ -1,0 +1,19 @@
+{
+  "name": "@crazyone/playground",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.3.4",
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "storybook": "cd apps/storybook && bun run storybook",
+    "storybook:build": "cd apps/storybook && bun run build",
+    "showcase": "cd apps/showcase && bun run dev",
+    "showcase:build": "cd apps/showcase && bun run build"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.7.0"
+  }
+}
