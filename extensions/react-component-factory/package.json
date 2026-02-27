@@ -1,0 +1,73 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "react-component-factory",
+  "title": "React Component Factory",
+  "description": "Build, browse, remix and quick-insert React components with full metadata, props, variants and Storybook stories",
+  "icon": "command-icon.png",
+  "author": "crazyone",
+  "categories": ["Developer Tools", "Productivity"],
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "componentsRoot",
+      "title": "Components Root",
+      "description": "Absolute path to the components library directory (e.g. ~/projects/my-app/src/components)",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "~/projects/my-app/src/components"
+    },
+    {
+      "name": "author",
+      "title": "Default Author",
+      "description": "Author name for new components",
+      "type": "textfield",
+      "required": false,
+      "default": "crazyone"
+    }
+  ],
+  "commands": [
+    {
+      "name": "create-component",
+      "title": "Create Component",
+      "description": "Scaffold a new React component with types, props, variants, meta.json and optional Storybook story",
+      "mode": "view"
+    },
+    {
+      "name": "component-library",
+      "title": "Component Library",
+      "description": "Browse all components with detailed props, variants, examples and metadata",
+      "mode": "view"
+    },
+    {
+      "name": "remix-component",
+      "title": "Remix Component",
+      "description": "Clone and customize an existing component with new variants, tags and wrappers",
+      "mode": "view"
+    },
+    {
+      "name": "quick-insert",
+      "title": "Quick Insert",
+      "description": "Search and paste/copy component imports, usage snippets or full source code",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.3",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
