@@ -1,78 +1,76 @@
 # @crazyone/playground
 
-Interactive development environment for @crazyone UI themes.
+Interactive development environment for @crazyone UI themes + **Raycast Extension Factory** for CrazyOne & SBedil ecosystems.
 
-## Apps
+## Apps (Design System)
 
 ### Storybook
 Component playground showcasing all themes with live examples.
 
 ```bash
-# Run Storybook on port 6006
-bun run storybook
+bun run storybook      # port 6006
 ```
 
 ### Showcase
 Demo application featuring all themes in a realistic website layout.
 
 ```bash
-# Run Showcase dev server
-bun run showcase
-
-# Build for production
-bun run showcase:build
+bun run showcase       # dev server
+bun run showcase:build # production build
 ```
+
+## Raycast Extension Factory
+
+Factory system for generating and maintaining Raycast extensions for two ecosystems:
+
+- **CrazyOne** — Marketing & Strategia: workflow per clienti enterprise, action points, reporting, document automation.
+- **SBedil** — Amministrazione & Operatività edilizia: preventivi, commesse, fatture, scadenze, checklist operative.
+
+### Quick start: create a new extension
+
+1. Copy the golden template:
+   ```bash
+   cp -r template/ extensions/<your-extension-slug>/
+   ```
+2. Replace placeholders (`{{EXTENSION_SLUG}}`, `{{COMMAND_NAME}}`, etc.) — see `docs/sop-nuova-estensione.md`
+3. Implement commands in `src/`
+4. Add `.env` from `.env.example`
+5. `npm install && npm run dev`
+
+See `CLAUDE.md` for full AI-assisted workflow and conventions.
 
 ## Installation
 
 ```bash
-# Install dependencies
-bun install
-
-# Build all apps
-bun run build
+bun install   # Install dependencies
+bun run build # Build all apps
 ```
 
-## Requirements
+### Requirements
 
-Before running the playground, you must first publish the @crazyone/ui packages:
+Before running the playground apps, publish the @crazyone/ui packages first:
 
-1. Go to the crazyone-ui directory:
-   ```bash
-   cd ../crazyone-ui
-   ```
-
-2. Build and publish packages:
-   ```bash
-   bun install
-   bun run build
-   bun run release
-   ```
-
-3. Return to playground and install:
-   ```bash
-   cd ../crazyone-playground
-   bun install
-   ```
+```bash
+cd ../crazyone-ui && bun install && bun run build && bun run release
+cd ../crazyone-playground && bun install
+```
 
 ## Available Themes
 
-All 27 @crazyone/ui themes are available:
-- arctic, bauhaus, bioluminescent, blackletter, brutalist
-- bubblegum, campfire, cyberdeck, darkroom, gelato
-- greenhouse, hologram, lyra, maia, mira, nightclub
-- nova, obsidian, retrofuture, synthwave, terracotta
-- thunderstorm, vaporwave, vega, wireframe
+All 27 @crazyone/ui themes:
+arctic, bauhaus, bioluminescent, blackletter, brutalist, bubblegum, campfire, cyberdeck, darkroom, gelato, greenhouse, hologram, lyra, maia, mira, nightclub, nova, obsidian, retrofuture, synthwave, terracotta, thunderstorm, vaporwave, vega, wireframe
 
 ## Directory Structure
 
 ```
-apps/
-├── storybook/         # Component playground (port 6006)
-│   ├── stories/       # Stories by theme
-│   └── .storybook/    # Storybook config
-└── showcase/          # Demo website
-    └── src/           # App source
+├── apps/
+│   ├── storybook/         # Component playground (port 6006)
+│   └── showcase/          # Demo website
+├── template/              # Raycast extension golden template
+├── extensions/            # Generated Raycast extensions
+├── docs/                  # SOP, playbook, architecture notes
+├── clients/               # Client metadata (non-sensitive)
+└── CLAUDE.md              # AI workflow instructions
 ```
 
 ## Scripts

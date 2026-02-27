@@ -1,0 +1,49 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "claude-code-skill-creator",
+  "title": "Claude Code Skill Creator",
+  "description": "Create, browse and manage Claude Code skills (custom slash commands) with curated templates for CrazyOne & SBedil",
+  "icon": "command-icon.png",
+  "author": "crazyone",
+  "categories": ["Developer Tools", "Productivity"],
+  "license": "MIT",
+  "commands": [
+    {
+      "name": "create-skill",
+      "title": "Create Skill",
+      "description": "Create a new Claude Code skill with full frontmatter configuration",
+      "mode": "view"
+    },
+    {
+      "name": "list-skills",
+      "title": "List Skills",
+      "description": "Browse and manage existing Claude Code skills (project and user scope)",
+      "mode": "view"
+    },
+    {
+      "name": "skill-templates",
+      "title": "Skill Templates",
+      "description": "Browse curated skill templates for CrazyOne, SBedil and general use",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.3",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
