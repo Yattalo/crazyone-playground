@@ -37,3 +37,7 @@ report.*.json
 
 # Storybook static build
 apps/storybook/storybook-static/
+
+# Raycast extensions build output
+extensions/*/node_modules
+extensions/*/dist
