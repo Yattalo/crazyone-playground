@@ -1,0 +1,105 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "sopralluogo-3d-pipeline",
+  "title": "Sopralluogo 3D Pipeline",
+  "description": "Orchestrate the tttLRM → 3DGS → VBVR pipeline: transform site survey videos into navigable 3D showrooms with AI-generated infographic overlays",
+  "icon": "command-icon.png",
+  "author": "sbedil",
+  "categories": ["Productivity"],
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "projectsRoot",
+      "title": "Projects Directory",
+      "description": "Directory where pipeline projects are stored",
+      "type": "directory",
+      "required": true,
+      "placeholder": "~/Documents/sopralluoghi"
+    },
+    {
+      "name": "pythonPath",
+      "title": "Python Path",
+      "description": "Path to Python binary in a virtualenv with tttLRM and VBVR installed",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "~/miniconda3/envs/sopralluogo/bin/python"
+    },
+    {
+      "name": "tttlrmCheckpoint",
+      "title": "tttLRM Checkpoint",
+      "description": "Path to tttLRM model checkpoint file",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "~/models/tttlrm/checkpoint.pt"
+    },
+    {
+      "name": "vbvrModel",
+      "title": "VBVR Model Path",
+      "description": "Path to quantized VBVR model directory",
+      "type": "textfield",
+      "required": true,
+      "placeholder": "~/models/vbvr-wan2.2-8bit/"
+    },
+    {
+      "name": "ffmpegPath",
+      "title": "FFmpeg Path",
+      "description": "Path to ffmpeg binary (leave default if ffmpeg is in PATH)",
+      "type": "textfield",
+      "required": false,
+      "default": "ffmpeg"
+    },
+    {
+      "name": "maxMemoryGB",
+      "title": "Max Memory (GB)",
+      "description": "Maximum memory budget for ML models. Recommended: 24 for a 32GB Mac",
+      "type": "textfield",
+      "required": false,
+      "default": "24"
+    }
+  ],
+  "commands": [
+    {
+      "name": "launch-pipeline",
+      "title": "Launch Pipeline",
+      "description": "Configure and launch a full sopralluogo-to-infographic pipeline",
+      "mode": "view"
+    },
+    {
+      "name": "pipeline-monitor",
+      "title": "Pipeline Monitor",
+      "description": "Monitor active pipeline progress, memory pressure, and stage logs",
+      "mode": "view"
+    },
+    {
+      "name": "project-library",
+      "title": "Project Library",
+      "description": "Browse, re-launch, and manage past pipeline projects",
+      "mode": "view"
+    },
+    {
+      "name": "check-environment",
+      "title": "Check Environment",
+      "description": "Validate Python, tttLRM, VBVR, ffmpeg, and GPU prerequisites",
+      "mode": "view"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.93.3",
+    "@raycast/utils": "^1.19.1"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.13.10",
+    "@types/react": "19.0.10",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
